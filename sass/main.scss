@@ -1,0 +1,221 @@
+@import "./libs/reset";
+@import "./utils/variables";
+@import "./utils/mixin";
+@import "../css/menu.css";
+body {
+    background-color: white;
+    font-size: 16px;
+    font-family: 'roboto', sans-serif;
+}
+
+
+.header {
+    @include flex-center;
+    width: 100%;
+    height: 60px;
+    &__logo {
+        width: 180px;
+    }
+}
+
+.underhead {
+    background-color: $background;
+    &__localisation {
+        @include flex-center;
+        height: 50px;
+        background-color: darken($background, 5%);
+        border-top: 3px solid darken($background, 20%);
+        & label {
+            margin-left: 50px;
+        }
+        & input {
+            border: none;
+            background-color: inherit;
+            padding-left: 15px;
+            color: black;
+            &::placeholder	{
+                font-weight: 700;
+                color: black;
+            }
+        }
+    }   
+
+    &__intro {
+        @include flex-center;
+        flex-wrap: wrap;
+        padding: 50px 20px;
+        & h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            padding: 20PX;
+        }
+        & p {
+            text-align: center;
+            margin: 15px 0;
+            color:rgb(131, 131, 131)
+        }
+        & button {
+            border: none;
+            background-color: $secondaire;
+            height: 50px;
+            width: 200px;
+            border-radius: 30px;
+            margin: 20px 0;
+            color: $background;
+            font-size: 0.85rem;
+            font-weight: 700;
+            @include box-shadow;            
+        }
+    }
+}
+
+.function {
+    @include flex-center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+
+    &__title {
+        width: 100%;
+        text-align: left;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__btn {
+        @include flex-center;
+        width: 100%;
+        height: 70px;
+        background-color: lighten($background, 1%);
+        border-radius: 20px;
+        margin: 12.5px 0;
+        @include box-shadow;
+        &:hover {
+            background-color: lighten($primaire, 35%);
+            & i {
+                color: $primaire;
+            }
+        }
+    }
+    &__name {
+        width: 100%;
+        font-weight: 600;
+        & i {
+            color: darken($background, 40%);
+            margin: 0 25px;
+        }
+    }
+    
+
+}
+
+.restaurant {
+    padding: 50px 20px;
+    background-color: $background;
+    &__title {
+        width: 100%;
+        text-align: left;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__card {
+        width: 100%;
+        height: 280px;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: white;
+        margin: 20px 0;
+        @include box-shadow;
+
+        & .palette {
+            background: url("../images/restaurants/palette-du-gout.jpg")
+            no-repeat center center / cover;
+        }
+        & .note {
+            background: url("../images/restaurants/la-note-enchantee.jpg")
+            no-repeat center center / cover;
+        }
+        & .francaise {
+            background: url("../images/restaurants/A-la-francaise.jpg")
+            no-repeat center center / cover;
+        }
+        & .delice {
+            background: url("../images/restaurants/le-delice-des-sens.jpg")
+            no-repeat center center / cover;
+        }
+    }
+    &__img {
+        height: calc(100% - 70px);
+        width: 100%;
+
+    }
+    &__content {
+        position: relative;
+        height: 70px;
+        padding: 10px;
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: '\f004';
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        line-height: 1.5rem;
+    }
+
+    &__localisation {
+        line-height: 1.5rem;
+        color: darken($background, 40%);
+    }
+
+    // &__like {
+    //     position: absolute;
+    //     bottom: 20px;
+    //     right: 20px;
+    //     & i {
+    //         font-size: 1.4rem;
+    //     }
+    //     &:hover {
+    //         background-color: $primaire;
+    //     }
+    // }
+
+}
+
+.footer {
+    background-color: rgb(53, 53, 53);
+    padding: 20px 20px;
+    &__logo {
+        width: 100px;
+        height: auto;
+    }
+
+    &__link {
+        padding: 10px 0;
+    }
+
+    & ul li {
+        margin: 10px 0;
+        & i {
+            height: 17px;
+            width: 20px;
+            color: white;
+            margin-right: 15px;
+        }
+        & a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.875rem;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+

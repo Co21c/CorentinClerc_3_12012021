@@ -1,0 +1,251 @@
+@charset "UTF-8";
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+@import "../css/menu.css";
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+td:not([align]), th:not([align]) {
+  text-align: left;
+}
+
+body {
+  background-color: white;
+  font-size: 16px;
+  font-family: "roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+}
+.header__logo {
+  width: 180px;
+}
+
+.underhead {
+  background-color: #F2F2F2;
+}
+.underhead__localisation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #e5e5e5;
+  border-top: 3px solid #bfbfbf;
+}
+.underhead__localisation label {
+  margin-left: 50px;
+}
+.underhead__localisation input {
+  border: none;
+  background-color: inherit;
+  padding-left: 15px;
+  color: black;
+}
+.underhead__localisation input::placeholder {
+  font-weight: 700;
+  color: black;
+}
+.underhead__intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+.underhead__intro h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 900;
+  padding: 20PX;
+}
+.underhead__intro p {
+  text-align: center;
+  margin: 15px 0;
+  color: #838383;
+}
+.underhead__intro button {
+  border: none;
+  background-color: #FF79DA;
+  height: 50px;
+  width: 200px;
+  border-radius: 30px;
+  margin: 20px 0;
+  color: #F2F2F2;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0px 0px 21px -5px #9E9E9E;
+}
+
+.function {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+.function__title {
+  width: 100%;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.function__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  margin: 12.5px 0;
+  box-shadow: 0px 0px 21px -5px #9E9E9E;
+}
+.function__btn:hover {
+  background-color: #f2eafb;
+}
+.function__btn:hover i {
+  color: #9356DC;
+}
+.function__name {
+  width: 100%;
+  font-weight: 600;
+}
+.function__name i {
+  color: #8c8c8c;
+  margin: 0 25px;
+}
+
+.restaurant {
+  padding: 50px 20px;
+  background-color: #F2F2F2;
+}
+.restaurant__title {
+  width: 100%;
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.restaurant__card {
+  width: 100%;
+  height: 280px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  margin: 20px 0;
+  box-shadow: 0px 0px 21px -5px #9E9E9E;
+}
+.restaurant__card .palette {
+  background: url("../images/restaurants/palette-du-gout.jpg") no-repeat center center/cover;
+}
+.restaurant__card .note {
+  background: url("../images/restaurants/la-note-enchantee.jpg") no-repeat center center/cover;
+}
+.restaurant__card .francaise {
+  background: url("../images/restaurants/A-la-francaise.jpg") no-repeat center center/cover;
+}
+.restaurant__card .delice {
+  background: url("../images/restaurants/le-delice-des-sens.jpg") no-repeat center center/cover;
+}
+.restaurant__img {
+  height: calc(100% - 70px);
+  width: 100%;
+}
+.restaurant__content {
+  position: relative;
+  height: 70px;
+  padding: 10px;
+}
+.restaurant__content::after {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  font-size: 1.2rem;
+}
+.restaurant__name {
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.restaurant__localisation {
+  line-height: 1.5rem;
+  color: #8c8c8c;
+}
+
+.footer {
+  background-color: #353535;
+  padding: 20px 20px;
+}
+.footer__logo {
+  width: 100px;
+  height: auto;
+}
+.footer__link {
+  padding: 10px 0;
+}
+.footer ul li {
+  margin: 10px 0;
+}
+.footer ul li i {
+  height: 17px;
+  width: 20px;
+  color: white;
+  margin-right: 15px;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.875rem;
+}
+.footer ul li a:hover {
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=style.css.map */

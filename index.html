@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo"><img src="/images/logo/ohmyfood.png" alt=""></div>
+    </header>
+    <section class="underhead">
+        <div class="underhead__localisation">
+            <label for="position"><i class="fas fa-map-marker-alt"></i></label>
+            <input type="text" placeholder="Paris, Belleville" id="position">
+        </div>
+        <div class="underhead__intro">
+            <h1 class="intro__title">Réservez le menu qui vous convient</h1>
+            <p class="intro__p">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+            <button class="intro__btn">Explorer nos restaurants</button>
+        </div>
+    </section>
+    <section class="function">
+        <h3 class="function__title">Fonctionnement</h3>
+        <div class="function__btn">
+            <p class="function__name"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p>
+        </div>        
+        <div class="function__btn">
+            <p class="function__name"><i class="fas fa-list"></i>Composez votre menu</p>
+        </div>        
+        <div class="function__btn">
+            <p class="function__name"><i class="fas fa-store"></i>Dégustez au restaurant</p>
+        </div>
+    </section>
+    <main class="restaurant">
+        <h3 class="restaurant__title">Restaurants</h3>
+        <article class="restaurant__card">
+            <div class="restaurant__img palette"></div>
+            <div class="restaurant__content">
+                <h5 class="restaurant__name">La palette du goût</h5>
+                <p class="restaurant__localisation">Ménilmontant</p>
+            </div>
+            <span class="restaurant__like"><i class="far fa-heart"></i></span>
+        </article>
+        <article class="restaurant__card">
+            <div class="restaurant__img note"></div>
+                <div class="restaurant__content">
+                <h5 class="restaurant__name">La note enchantée</h5>
+                <p class="restaurant__localisation">Charonne</p>
+            </div>
+            <span class="restaurant__like"><i class="far fa-heart"></i></span>
+        </article>
+        <article class="restaurant__card">
+            <div class="restaurant__img francaise"></div>
+            <div class="restaurant__content">
+                <h5 class="restaurant__name ">A la française</h5>
+                <p class="restaurant__localisation">Cité rouge</p>
+            </div>
+            <span class="restaurant__like"><i class="far fa-heart"></i></span>
+        </article>
+        <article class="restaurant__card">
+            <div class="restaurant__img delice"></div>
+            <div class="restaurant__content">
+                <h5 class="restaurant__name">Le délice des sens</h5>
+                <p class="restaurant__localisation">Folie-Méricourt</p>
+            </div>
+            <span class="restaurant__like"><i class="far fa-heart"></i></span>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="footer__logo"><img src="/images/logo/ohmyfood.png" alt=""></div>
+        <div class="footer__link">
+            <ul>
+                <li><i class="fas fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
+                <li><i class="fas fa-hands-helping"></i><a href="#">Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
