@@ -95,7 +95,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 50px 20px;
+  padding: 30px 20px;
 }
 .underhead__intro h1 {
   text-align: center;
@@ -182,16 +182,16 @@ body {
   box-shadow: 0px 0px 21px -5px #9E9E9E;
 }
 .restaurant__card .palette {
-  background: url("../images/restaurants/palette-du-gout.jpg") no-repeat center center/cover;
+  background: url("images/restaurants/palette-du-gout.jpg") no-repeat center center/cover;
 }
 .restaurant__card .note {
-  background: url("../images/restaurants/la-note-enchantee.jpg") no-repeat center center/cover;
+  background: url("images/restaurants/la-note-enchantee.jpg") no-repeat center center/cover;
 }
 .restaurant__card .francaise {
-  background: url("../images/restaurants/A-la-francaise.jpg") no-repeat center center/cover;
+  background: url("images/restaurants/A-la-francaise.jpg") no-repeat center center/cover;
 }
 .restaurant__card .delice {
-  background: url("../images/restaurants/le-delice-des-sens.jpg") no-repeat center center/cover;
+  background: url("images/restaurants/le-delice-des-sens.jpg") no-repeat center center/cover;
 }
 .restaurant__img {
   height: calc(100% - 70px);

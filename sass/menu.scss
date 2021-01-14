@@ -2,6 +2,7 @@
 @import "./utils/variables";
 @import "./utils/mixin";
 @import "./main.scss";
+@import "./utils/anim";
 
 
 
@@ -65,10 +66,12 @@
     }
 
     &__card {
-        @include flex-center;
+        // @include flex-center;
+        position: relative;
+        display: flex;
         flex-wrap: wrap;
         background-color: white;
-        height: 60px;
+        // height: 60px;
         padding: 10px 20px;
         border-radius: 15px;
         margin: 15px 0;
@@ -76,17 +79,20 @@
 
     }
     &__name {
-        width: 100%;
-        font-size: 1.2rem;
+        width: 90%;
+        font-size: 1rem;
         font-weight: 600;
-        @include text-overflow;
+        margin: 2px 0;
+        // @include text-overflow;
     }
     &__p {
-        width: 50%;
-        @include text-overflow;
+        margin: 2px 0;
+        width: 90%;
+        font-size: 0.900rem;
+        // @include text-overflow;
     }
     &__price {
-        width: 50%;
+        width: 10%;
         text-align: right;
         font-weight: 500;
     }

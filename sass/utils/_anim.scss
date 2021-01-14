@@ -1,0 +1,23 @@
+@import "./variables";
+
+
+
+// .menu__card {
+//     &::after {
+//         content: '';
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//         top: 0;
+//         background-color: $tertiaire;
+//         border-radius: 15px;
+//         z-index: -1;
+//     }
+//     &:hover {
+//         transform-origin: right;
+//         width: calc(100% - 50px);
+//         transition-duration: 1000ms;
+
+//     }
+// }
