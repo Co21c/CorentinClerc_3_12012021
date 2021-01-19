@@ -41,7 +41,7 @@
         position: relative;
         padding-left: 20px;
         font-size: 1.6rem;
-        font-weight: 900;
+        font-family: 'Shrikhand', cursive;
         &::after {
             font-family: "Font Awesome 5 Free";
             content: '\f004';
@@ -58,11 +58,58 @@
 
 .menu {
     background-color: $background;
-    &__section {
+    & .starter {        
         padding: 20px 20px 0 20px;
+
+        &__title {
+            animation-duration: 750ms;
+        }
+        & article:nth-child(2) {
+            animation-duration: 1000ms;
+        }
+        & article:nth-child(3) {
+            animation-duration: 1500ms;
+        }
+        & article:nth-child(4) {
+            animation-duration: 2000ms;
+        }
     }
+    & .maincourse {        
+        padding: 20px 20px 0 20px;
+
+        &__title {
+            animation-duration: 2250ms;
+        }
+        & article:nth-child(2) {
+            animation-duration: 2500ms;
+        }
+        & article:nth-child(3) {
+            animation-duration: 3000ms;
+        }
+        & article:nth-child(4) {
+            animation-duration: 3500ms;
+        }
+    }
+    & .dessert {        
+        padding: 20px 20px 0 20px;
+
+        &__title {
+            animation-duration: 3750ms;
+        }
+        & article:nth-child(2) {
+            animation-duration: 4000ms;
+        }
+        & article:nth-child(3) {
+            animation-duration: 4500ms;
+        }
+        & article:nth-child(4) {
+            animation-duration: 5000ms;
+        }
+    }
+
     &__title {
         text-transform: uppercase;
+        animation-name: testslide;       
     }
 
     &__card {
@@ -72,14 +119,62 @@
         flex-wrap: wrap;
         background-color: white;
         // height: 60px;
-        padding: 10px 20px;
+        // padding: 10px 20px;
         border-radius: 15px;
         margin: 15px 0;
         @include box-shadow;
-
+        animation-name: testslide;
+        height: 64px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover .menu__content {
+            width: calc(100% - 60px);
+        }
+        &:hover i {
+            color: white;
+            transition-duration: 1000ms;
+            transform: rotate(-360deg)
+        }
+        &:hover p {
+            @include text-overflow;
+        }
     }
+/* test d'animation */
+
+    &__content {
+        background-color: white;
+        border-radius: 15px;
+        z-index: 3;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        transform-origin: left;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__anim {
+        position: relative;
+        background-color: $tertiaire;
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+        & i {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            font-size: 20px;
+            color: transparent;
+        }
+    }
+
+
+
+
+
     &__name {
-        width: 90%;
+        width: calc(100% - 35px);
         font-size: 1rem;
         font-weight: 600;
         margin: 2px 0;
@@ -87,12 +182,12 @@
     }
     &__p {
         margin: 2px 0;
-        width: 90%;
+        width: calc(100% - 35px);
         font-size: 0.900rem;
-        // @include text-overflow;
+        @include text-overflow;
     }
     &__price {
-        width: 10%;
+        width: 35px;
         text-align: right;
         font-weight: 500;
     }

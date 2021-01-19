@@ -21,3 +21,20 @@
 
 //     }
 // }
+
+
+
+@keyframes testslide {
+    0% {
+        transform: translate( 0, 2000px);
+    }
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
