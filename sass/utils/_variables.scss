@@ -2,3 +2,14 @@ $primaire: #9356DC;
 $secondaire: #FF79DA;
 $tertiaire: #99E2D0;
 $background: #F2F2F2;
+
+
+
+/* responsive*/
+
+
+$medium: 767px;
+$medium-up: "only screen and (min-width: #{$medium})";
+
+$large: 1023px;
+$large-up: "only screen and (min-width: #{$large})";
