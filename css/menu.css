@@ -112,28 +112,140 @@ td:not([align]), th:not([align]) {
   transition: transform 300ms ease-in-out;
 }
 .btn--standard:hover {
-  transform: scale(1.05);
+  opacity: 0.8;
   cursor: pointer;
+  box-shadow: 2px 2px 25px 0px black;
 }
 .btn--standard:focus {
   outline: none;
 }
 
-body {
+/* responsive*/
+@media only screen and (min-width: 767px) {
+  .wrapper {
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .wrapper {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .wrapper {
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
+}
+
+/* responsive*/
+@keyframes testslide {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  60% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.load {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: bye 2400ms linear forwards;
+}
+
+.load__icon {
+  background-image: linear-gradient(360deg, #9356DC 0%, #FF79DA 100%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 20px;
+  margin: 10px;
+  animation-name: loading;
+  animation-duration: 800ms;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 4px #9356DC;
+  }
+  90% {
+    opacity: 0.2;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 4px #9356DC;
+  }
+}
+@keyframes bye {
+  100% {
+    display: none;
+    z-index: -1;
+  }
+}
+.load__icon:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.load__icon:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.load__icon:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.load__icon:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.load__icon:nth-child(5) {
+  animation-delay: 500ms;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   font-size: 16px;
   font-family: "roboto", sans-serif;
+  flex: 1 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 60px;
+  position: relative;
+  margin: 10px;
 }
 .header__logo {
-  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
 }
 
 .underhead {
@@ -189,7 +301,6 @@ body {
 }
 .function__title {
   width: 100%;
-  max-width: 600px;
   text-align: left;
   font-size: 1.6rem;
   font-weight: 700;
@@ -199,12 +310,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 100%;
-  max-width: 600px;
   height: 70px;
   background-color: whitesmoke;
   border-radius: 20px;
-  margin: 12.5px 0;
+  margin: 12.5px 10px;
   box-shadow: 0px 0px 21px -5px #9E9E9E;
 }
 .function__btn:hover {
@@ -213,6 +324,24 @@ body {
 .function__btn:hover i {
   color: #9356DC;
 }
+@media only screen and (min-width: 1400px) {
+  .function__btn {
+    margin: 12.5px 20px;
+    width: calc(33% - 40px);
+  }
+}
+.function__number {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -10px;
+  background-color: #9356DC;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
 .function__name {
   width: 100%;
   font-weight: 600;
@@ -220,12 +349,6 @@ body {
 .function__name i {
   color: #8c8c8c;
   margin: 0 25px;
-}
-@media only screen and (min-width: 1023px) {
-  .function {
-    padding-left: 200px;
-    padding-right: 200px;
-  }
 }
 
 .restaurant {
@@ -262,6 +385,7 @@ body {
 }
 @media only screen and (min-width: 1023px) {
   .restaurant__card {
+    justify-content: space-between;
     width: 330px;
     flex-grow: 1;
     margin: 20px 20px;
@@ -287,22 +411,6 @@ body {
   position: relative;
   height: 70px;
   padding: 10px;
-  /*
-          &::after {
-              font-family: "Font Awesome 5 Free";
-              content: '\f004';
-              position: absolute;
-              bottom: 30px;
-              right: 20px;
-              font-size: 1.2rem;
-              transition: 300ms;
-          }
-          &:hover::after {
-              // background: linear-gradient(100deg, $primaire, $secondaire);
-              color: ;
-              font-weight: 900;
-          }
-  */
 }
 .restaurant__name {
   font-weight: 700;
@@ -332,24 +440,20 @@ body {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-@media only screen and (min-width: 767px) {
-  .restaurant {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-}
 @media only screen and (min-width: 1023px) {
   .restaurant {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 }
 
 .footer {
+  margin-top: auto;
   width: 100%;
   background-color: #353535;
   padding: 20px 20px;
+  flex-shrink: 0;
 }
 .footer__logo {
   color: white;
@@ -383,15 +487,86 @@ body {
 /* responsive*/
 @keyframes testslide {
   0% {
-    transform: translate(0, 2000px);
-  }
-  50% {
     opacity: 0;
+    transform: translate(0, 20px);
+  }
+  60% {
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
   }
 }
+.load {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: bye 2400ms linear forwards;
+}
+
+.load__icon {
+  background-image: linear-gradient(360deg, #9356DC 0%, #FF79DA 100%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 20px;
+  margin: 10px;
+  animation-name: loading;
+  animation-duration: 800ms;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 4px #9356DC;
+  }
+  90% {
+    opacity: 0.2;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 4px #9356DC;
+  }
+}
+@keyframes bye {
+  100% {
+    display: none;
+    z-index: -1;
+  }
+}
+.load__icon:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.load__icon:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.load__icon:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.load__icon:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.load__icon:nth-child(5) {
+  animation-delay: 500ms;
+}
+
 .header__back {
   display: flex;
   align-items: center;
@@ -400,8 +575,7 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 60px;
-  width: 40px;
+  height: 100%;
 }
 
 .restau__img {
@@ -416,11 +590,11 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   right: 0;
   z-index: 1;
-  height: 60px;
+  height: 65px;
   background-color: #F2F2F2;
   border-radius: 20px 20px 0 0;
 }
@@ -452,16 +626,12 @@ body {
 .menu {
   background-color: #F2F2F2;
   width: 100%;
+  padding-bottom: 80px;
   /* test d'animation */
 }
 .menu__section {
   width: 100%;
-}
-@media only screen and (min-width: 767px) {
-  .menu__section {
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-  }
+  padding: 20px 20px 0 20px;
 }
 @media only screen and (min-width: 1023px) {
   .menu__section {
@@ -469,50 +639,41 @@ body {
     flex-wrap: wrap;
   }
 }
-.menu .starter {
-  padding: 20px 20px 0 20px;
-}
 .menu .starter__title {
-  animation-duration: 750ms;
+  animation-duration: 600ms;
 }
 .menu .starter article:nth-child(2) {
-  animation-duration: 1000ms;
+  animation-duration: 800ms;
 }
 .menu .starter article:nth-child(3) {
-  animation-duration: 1500ms;
+  animation-duration: 1000ms;
 }
 .menu .starter article:nth-child(4) {
-  animation-duration: 2000ms;
-}
-.menu .maincourse {
-  padding: 20px 20px 0 20px;
+  animation-duration: 1200ms;
 }
 .menu .maincourse__title {
-  animation-duration: 2250ms;
+  animation-duration: 1400ms;
 }
 .menu .maincourse article:nth-child(2) {
-  animation-duration: 2500ms;
+  animation-duration: 1600ms;
 }
 .menu .maincourse article:nth-child(3) {
-  animation-duration: 3000ms;
+  animation-duration: 1800ms;
 }
 .menu .maincourse article:nth-child(4) {
-  animation-duration: 3500ms;
-}
-.menu .dessert {
-  padding: 20px 20px 0 20px;
+  animation-duration: 2000ms;
 }
 .menu .dessert__title {
-  animation-duration: 3750ms;
+  animation-duration: 2200ms;
 }
 .menu .dessert article:nth-child(2) {
-  animation-duration: 4000ms;
+  animation-duration: 2400ms;
 }
 .menu .dessert article:nth-child(3) {
-  animation-duration: 4500ms;
+  animation-duration: 2600ms;
 }
 .menu .dessert article:nth-child(4) {
-  animation-duration: 5000ms;
+  animation-duration: 2800ms;
 }
 .menu__title {
   width: 100%;
@@ -604,7 +765,6 @@ body {
   justify-content: center;
   width: 100%;
   height: 100px;
-  margin-bottom: 80px;
 }
 
 /*# sourceMappingURL=menu.css.map */
