@@ -70,6 +70,7 @@
     background-color: $background;
     width: 100%;
     padding-bottom: 80px;
+    padding-top: 20px;
     &__section {
         width: 100%;
         padding: 20px 20px 0 20px;
@@ -127,9 +128,22 @@
     }
 
     &__title {
+        position: relative;
         width: 100%;
         text-transform: uppercase;
-        animation-name: testslide;       
+        animation-name: testslide;
+        margin-bottom: 20px;
+         
+
+        &::after {
+            content: "_____";
+            color: $tertiaire;
+            font-weight: 900;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }    
     }
 
     &__card {
