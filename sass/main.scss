@@ -2,20 +2,32 @@
 @import "./utils/variables";
 @import "./utils/mixin";
 @import "./components/button";
+<<<<<<< HEAD
 @import "../css/menu.css";
 body {
+=======
+@import "./base/responsive";
+// @import "../css/menu.css";
+@import "./utils/anim";
+html, body {
+    display: flex;
+    flex-direction: column;
+>>>>>>> f13716ac093b7eed270d43c6fba08782c6fc415e
     background-color: white;
     font-size: 16px;
     font-family: 'roboto', sans-serif;
+    flex: 1 0 auto;
+    height: 100%;
+    width: 100%;
 }
-
 
 .header {
     @include flex-center;
-    width: 100%;
-    height: 60px;
+    position: relative;
+    margin: 10px;
     &__logo {
-        width: 180px;
+        @include flex-center;
+        width: 160px;
     }
 }
 
@@ -58,26 +70,6 @@ body {
             width: 100%;
             
         }
-        // & button {
-        //     border: none;
-        //     background: linear-gradient(360deg, $primaire 0%, $secondaire 100%);
-        //     height: 50px;
-        //     width: 200px;
-        //     border-radius: 30px;
-        //     margin: 20px 0;
-        //     color: $background;
-        //     font-size: 0.85rem;
-        //     font-weight: 700;
-        //     @include box-shadow;
-        //     transition: transform 300ms ease-in-out;
-        //     &:hover {
-        //         transform: scale(1.05);
-        //         cursor: pointer;
-        //     }
-        //     &:focus {
-        //         outline: none;
-        //     }            
-        // }
     }
 }
 
@@ -88,27 +80,42 @@ body {
 
     &__title {
         width: 100%;
-        max-width: 600px;
         text-align: left;
         font-size: 1.6rem;
         font-weight: 700;
         margin-bottom: 30px;
     }
+
     &__btn {
         @include flex-center;
+        position: relative;
         width: 100%;
-        max-width: 600px;
         height: 70px;
         background-color: lighten($background, 1%);
         border-radius: 20px;
-        margin: 12.5px 0;
+        margin: 12.5px 10px;
         @include box-shadow;
         &:hover {
             background-color: lighten($primaire, 35%);
             & i {
                 color: $primaire;
             }
+        } 
+        @media #{$x-large-up} {
+            margin: 12.5px 20px;
+            width: calc(33% - 40px);
         }
+
+    }
+    &__number {
+        position: absolute;
+        @include flex-center;
+        left: -10px;
+        background-color: $primaire;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
     &__name {
         width: 100%;
@@ -117,11 +124,6 @@ body {
             color: darken($background, 40%);
             margin: 0 25px;
         }
-    }
-    
-    @media #{$large-up} {
-        padding-left: 200px;
-        padding-right: 200px;
     }
 
 }
@@ -162,6 +164,7 @@ body {
             no-repeat center center / cover;
         }
         @media #{$large-up} {
+            justify-content: space-between;
             width: 330px;
             flex-grow: 1;
             margin: 20px 20px;
@@ -194,23 +197,6 @@ body {
         position: relative;
         height: 70px;
         padding: 10px;
-/*
-        &::after {
-            font-family: "Font Awesome 5 Free";
-            content: '\f004';
-            position: absolute;
-            bottom: 30px;
-            right: 20px;
-            font-size: 1.2rem;
-            transition: 300ms;
-        }
-        &:hover::after {
-            // background: linear-gradient(100deg, $primaire, $secondaire);
-            color: ;
-            font-weight: 900;
-        }
-*/
-    
     }
 
     &__name {
@@ -243,22 +229,20 @@ body {
         }
 
     }
-    @media #{$medium-up} {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
     @media #{$large-up} {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
 }
 
 .footer {
+    margin-top: auto;
     width: 100%;
     background-color: rgb(53, 53, 53);
     padding: 20px 20px;
+    flex-shrink: 0;
     &__logo {
         color: white;
         height: 34px;

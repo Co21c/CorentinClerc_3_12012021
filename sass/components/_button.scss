@@ -11,8 +11,9 @@
     @include box-shadow;
     transition: transform 300ms ease-in-out;
     &:hover {
-        transform: scale(1.05);
+        opacity: 0.8;
         cursor: pointer;
+        box-shadow: 2px 2px 25px 0px black;
     }
     &:focus {
         outline: none;
