@@ -2,17 +2,12 @@
 @import "./utils/variables";
 @import "./utils/mixin";
 @import "./components/button";
-<<<<<<< HEAD
-@import "../css/menu.css";
-body {
-=======
 @import "./base/responsive";
 // @import "../css/menu.css";
 @import "./utils/anim";
 html, body {
     display: flex;
     flex-direction: column;
->>>>>>> f13716ac093b7eed270d43c6fba08782c6fc415e
     background-color: white;
     font-size: 16px;
     font-family: 'roboto', sans-serif;
@@ -233,6 +228,7 @@ html, body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        height: 100%
     }
 
 }

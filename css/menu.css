@@ -175,26 +175,41 @@ td:not([align]), th:not([align]) {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+  opacity: 0;
   font-size: 20px;
   margin: 10px;
-  animation-name: loading;
-  animation-duration: 800ms;
-  animation-iteration-count: 3;
-  animation-timing-function: linear;
+  animation-name: roll;
+  animation-duration: 2400ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@media only screen and (min-width: 767px) {
+  .load__icon {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .load__icon {
+    font-size: 80px;
+  }
 }
 
-@keyframes loading {
+@keyframes roll {
   0% {
-    opacity: 1;
-    text-shadow: 0 0 4px #9356DC;
+    opacity: 0;
+    transform: translateX(-300px);
   }
-  90% {
-    opacity: 0.2;
-    text-shadow: none;
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
   }
   100% {
-    opacity: 1;
-    text-shadow: 0 0 4px #9356DC;
+    opacity: 0;
+    transform: translateX(300px);
   }
 }
 @keyframes bye {
@@ -203,11 +218,11 @@ td:not([align]), th:not([align]) {
     z-index: -1;
   }
 }
-.load__icon:nth-child(1) {
+.load__icon:nth-child(5) {
   animation-delay: 100ms;
 }
 
-.load__icon:nth-child(2) {
+.load__icon:nth-child(4) {
   animation-delay: 200ms;
 }
 
@@ -215,11 +230,11 @@ td:not([align]), th:not([align]) {
   animation-delay: 300ms;
 }
 
-.load__icon:nth-child(4) {
+.load__icon:nth-child(2) {
   animation-delay: 400ms;
 }
 
-.load__icon:nth-child(5) {
+.load__icon:nth-child(1) {
   animation-delay: 500ms;
 }
 
@@ -431,7 +446,6 @@ html, body {
 .restaurant__like i:hover {
   cursor: pointer;
   font-weight: 700;
-  background-color: #f3ec78;
   background-image: linear-gradient(360deg, #9356DC 0%, #FF79DA 100%);
   background-size: 100%;
   background-clip: text;
@@ -445,6 +459,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 100%;
   }
 }
 
@@ -519,26 +534,41 @@ html, body {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+  opacity: 0;
   font-size: 20px;
   margin: 10px;
-  animation-name: loading;
-  animation-duration: 800ms;
-  animation-iteration-count: 3;
-  animation-timing-function: linear;
+  animation-name: roll;
+  animation-duration: 2400ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@media only screen and (min-width: 767px) {
+  .load__icon {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .load__icon {
+    font-size: 80px;
+  }
 }
 
-@keyframes loading {
+@keyframes roll {
   0% {
-    opacity: 1;
-    text-shadow: 0 0 4px #9356DC;
+    opacity: 0;
+    transform: translateX(-300px);
   }
-  90% {
-    opacity: 0.2;
-    text-shadow: none;
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
   }
   100% {
-    opacity: 1;
-    text-shadow: 0 0 4px #9356DC;
+    opacity: 0;
+    transform: translateX(300px);
   }
 }
 @keyframes bye {
@@ -547,11 +577,11 @@ html, body {
     z-index: -1;
   }
 }
-.load__icon:nth-child(1) {
+.load__icon:nth-child(5) {
   animation-delay: 100ms;
 }
 
-.load__icon:nth-child(2) {
+.load__icon:nth-child(4) {
   animation-delay: 200ms;
 }
 
@@ -559,11 +589,11 @@ html, body {
   animation-delay: 300ms;
 }
 
-.load__icon:nth-child(4) {
+.load__icon:nth-child(2) {
   animation-delay: 400ms;
 }
 
-.load__icon:nth-child(5) {
+.load__icon:nth-child(1) {
   animation-delay: 500ms;
 }
 
@@ -650,6 +680,9 @@ html, body {
 }
 .menu .starter article:nth-child(4) {
   animation-duration: 1200ms;
+}
+.menu .starter article:nth-child(5) {
+  animation-duration: 1300ms;
 }
 .menu .maincourse__title {
   animation-duration: 1400ms;
@@ -757,6 +790,11 @@ html, body {
   width: 35px;
   text-align: right;
   font-weight: 500;
+}
+@media only screen and (min-width: 1023px) {
+  .menu {
+    height: 100%;
+  }
 }
 
 .order {
